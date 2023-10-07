@@ -1,0 +1,70 @@
+/*PRN-22070123095
+EXPERIMENT_12A-CONSTUCTORS*/
+
+#include <iostream>
+using namespace std;
+
+class Student {
+    int PRN,year;
+    string name;
+public:
+    Student();
+    void display() {
+        cout << "Name: " << name << "\nPRN: " << PRN << "\nYear: " << year;
+    }
+};
+Student::Student() { //Constructor
+    cout << "\nEnter your name: ";
+    cin >> name;
+    cout << "Enter your PRN: ";
+    cin >> PRN;
+    cout << "Enter your year: ";
+    cin >> year;
+    
+}
+int main() {
+    Student s1; //Instantiation of object s1
+    s1.display();
+    return 0;
+}
+
+/*OUPUT
+Enter your name: Rishi
+Enter your PRN: 22070123095
+Enter your year: 2022
+Name: Rishi
+PRN: 22070123095
+Year: 2022
+*/
+
+
+/*Experiment12b-Destructors*/
+
+#include <iostream>
+using namespace std;
+int count =0;
+class destruct{
+    public:
+    destruct(){ //Destructor
+        count++;
+        cout<<"No. of objects created: "<<count<<endl;
+    }
+    ~destruct(){ //Destructor
+        count--;
+        cout<<"No. of objects created: "<<count<<endl;
+    }
+    };
+    
+int main(){
+    destruct aa,bb,cc; //Instantiation
+    return 0;
+}
+
+/*OUTPUT
+No. of objects created: 1
+No. of objects created: 2
+No. of objects created: 3
+No. of objects created: 2
+No. of objects created: 1
+No. of objects created: 0
+*/
